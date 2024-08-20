@@ -75,7 +75,7 @@ const createNode = async () => {
     const node = await createLibp2p({
         peerId,
         addresses: {
-            listen: [`/ip4/discovery-biq5.onrender.com/tcp/${process.env.PORT? 443: port + 1}`],
+            listen: [`/ip4/0.0.0.0/tcp/${process.env.PORT? 443: port + 1}`],
             announce: [`/dns4/discovery-biq5.onrender.com/tcp/${process.env.PORT? 443: port + 1}`]
         },
         transports: [tcp()],
