@@ -74,8 +74,8 @@ const createNode = async () => {
     const node = await createLibp2p({
         peerId,
         addresses: {
-            listen: [`/ip4/0.0.0.0/tcp/${process.env.PORT? process.env.PORT: port + 1}`],
-            announce: [`/dns4/discovery-biq5.onrender.com/tcp/${process.env.PORT? process.env.PORT: port + 1}`]
+            listen: [`/ip4/0.0.0.0/tcp/${process.env.PORT? '443': port + 1}`],
+            announce: [`/dns4/discovery-biq5.onrender.com/tcp/${process.env.PORT? '443': port + 1}`]
         },
         transports: [tcp()],
         streamMuxers: [yamux(), mplex()],
@@ -210,10 +210,10 @@ async function main () {
 
     app.use(queue.getErrorMiddleware());
 
-    // app.listen(port, () => {
-    //     console.log('pid: ', process.pid);
-    //     console.log('listening on http://localhost:' + port);
-    // });
+    app.listen(port, () => {
+        console.log('pid: ', process.pid);
+        console.log('listening on http://localhost:' + port);
+    });
 }
 
 main()

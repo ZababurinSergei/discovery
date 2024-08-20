@@ -72,7 +72,6 @@ app.use(await cors({credentials: true}));
 app.use(queue.getMiddleware());
 
 const createNode = async () => {
-    console.log('------------------', os.hostname())
     const node = await createLibp2p({
         peerId,
         addresses: {
