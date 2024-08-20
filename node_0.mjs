@@ -210,10 +210,10 @@ async function main () {
 
     app.use(queue.getErrorMiddleware());
 
-    app.listen(port, () => {
-        console.log('pid: ', process.pid);
-        console.log('listening on http://localhost:' + port);
-    });
+    // app.listen(port, () => {
+    //     console.log('pid: ', process.pid);
+    //     console.log('listening on http://localhost:' + port);
+    // });
 }
 
 main()
