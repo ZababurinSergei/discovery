@@ -13,21 +13,31 @@
   },
   "type": "module",
   "scripts": {
+    "start": "node node_0.mjs",
+    "node_1": "node node_1.mjs",
     "test": "test-node-example test/*"
   },
   "dependencies": {
-    "@chainsafe/libp2p-noise": "^15.0.0",
-    "@chainsafe/libp2p-yamux": "^6.0.1",
+    "@chainsafe/libp2p-noise": "^15.1.1",
+    "@chainsafe/libp2p-yamux": "^6.0.2",
+    "@libp2p/autonat": "^1.1.5",
     "@libp2p/bootstrap": "^10.1.0",
-    "@libp2p/circuit-relay-v2": "^1.0.5",
+    "@libp2p/circuit-relay-v2": "^1.1.5",
     "@libp2p/floodsub": "^9.1.0",
-    "@libp2p/identify": "^2.1.0",
+    "@libp2p/identify": "^2.1.5",
     "@libp2p/kad-dht": "^12.1.0",
     "@libp2p/mdns": "^10.0.5",
     "@libp2p/mplex": "^10.1.0",
+    "@libp2p/peer-id-factory": "^4.2.4",
     "@libp2p/pubsub-peer-discovery": "^10.0.1",
     "@libp2p/tcp": "^9.0.4",
-    "libp2p": "^1.0.8"
+    "@libp2p/websockets": "^8.2.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-enqueue": "^1.0.0",
+    "libp2p": "^1.9.2"
   },
   "devDependencies": {
     "execa": "^9.2.0",

@@ -1,9 +1,5 @@
 // Find this list at: https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core-config/src/config.js
 export default [
-  '/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ',
-  '/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN',
-  '/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
-  '/dnsaddr/bootstrap.libp2p.io/p2p/QmZa1sAxajnQjVM8WjWXoMbmPd7NsWhfKsPkErzpm9wGkp',
-  '/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa',
-  '/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt'
+  '/ip4/192.168.186.36/tcp/4839/p2p/12D3KooWR1HGc4mHKx4t9wssX4Tat5FzSbJZ9sduFLSqh31zZc6r',
+  '/ip4/192.168.186.36/tcp/4818/p2p/12D3KooWQNvxURk8YAYRhfyPAw3YvyjUaygqAmVeX6HW58ZCvTFN'
 ]
