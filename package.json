@@ -15,6 +15,7 @@
   "scripts": {
     "start": "node node_0.mjs",
     "node_1": "node node_1.mjs",
+    "node_2": "node node_2.mjs",
     "test": "test-node-example test/*"
   },
   "dependencies": {
@@ -37,7 +38,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-enqueue": "^1.0.0",
-    "libp2p": "^1.9.2"
+    "libp2p": "^1.9.2",
+    "os": "^0.1.2"
   },
   "devDependencies": {
     "execa": "^9.2.0",

@@ -21,7 +21,8 @@ import bootstrappers from './bootstrappers.js'
 import {createEd25519PeerId, exportToProtobuf, createFromProtobuf} from '@libp2p/peer-id-factory'
 import { autoNAT } from '@libp2p/autonat'
 
-const fileNamePeerId = '/peerId_0.proto'
+
+const fileNamePeerId = '/peerId_2.proto'
 let pathNode = ''
 const __dirname = process.cwd();
 const isRead = true
@@ -42,7 +43,7 @@ dotenv.config();
 
 const port = process.env.PORT
     ? process.env.PORT
-    : 4838;
+    : 4627;
 
 let whitelist = ['*']
 
@@ -75,8 +76,8 @@ const createNode = async () => {
     const node = await createLibp2p({
         peerId,
         addresses: {
-            listen: [`/ip4/discovery-biq5.onrender.com/tcp/${process.env.PORT? 443: port + 1}`],
-            announce: [`/dns4/discovery-biq5.onrender.com/tcp/${process.env.PORT? 443: port + 1}`]
+            listen: [`/ip4/0.0.0.0/tcp/${process.env.PORT? '443': port + 1}`],
+            announce: [`/dns4/0.0.0.0/tcp/${process.env.PORT? '443': port + 1}`]
         },
         transports: [tcp()],
         streamMuxers: [yamux(), mplex()],

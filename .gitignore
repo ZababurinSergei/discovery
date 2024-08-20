@@ -5,6 +5,7 @@ dist
 .coverage
 node_modules
 package-lock.json
+_sandbox
 yarn.lock
 .DS_Store
 .next
