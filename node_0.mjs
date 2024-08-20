@@ -21,6 +21,7 @@ import {createEd25519PeerId, exportToProtobuf, createFromProtobuf} from '@libp2p
 import { autoNAT } from '@libp2p/autonat'
 
 const fileNamePeerId = '/peerId_0.proto'
+let pathNode = ''
 const __dirname = process.cwd();
 const isRead = true
 const writePeerId = async (name) => {
@@ -100,8 +101,6 @@ const createNode = async () => {
     }
 
     console.log('Listening on:', peerConfig)
-
-    let pathNode = ''
 
     peerConfig.ma.forEach((ma) => {
         pathNode = ma.toString()
