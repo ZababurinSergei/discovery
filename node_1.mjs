@@ -86,8 +86,7 @@ const createNode = async () => {
         ],
         services: {
             kadDHT: kadDHT({
-                protocol: '/ipfs/lan/kad/1.0.0',
-                peerInfoMapper: removePublicAddressesMapper,
+                protocol: '/org/kad/1.0.0',
                 clientMode: false
             }),
             identify: identify(),
