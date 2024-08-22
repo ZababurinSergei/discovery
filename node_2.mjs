@@ -20,7 +20,7 @@ import { createLibp2p } from 'libp2p'
 import bootstrappers from './bootstrappers.js'
 import {createEd25519PeerId, exportToProtobuf, createFromProtobuf} from '@libp2p/peer-id-factory'
 import { autoNAT } from '@libp2p/autonat'
-
+import { peerIdFromString } from '@libp2p/peer-id'
 
 const fileNamePeerId = '/peerId_2.proto'
 let pathNode = ''
@@ -88,7 +88,7 @@ const createNode = async () => {
         ],
         services: {
             kadDHT: kadDHT({
-                protocol: '/org/kad/1.0.0',
+                protocol: '/universe/kad/1.0.0',
                 clientMode: false
             }),
             identify: identify(),

@@ -7,7 +7,7 @@ import Enqueue from 'express-enqueue';
 import compression from 'compression';
 import * as dotenv from 'dotenv';
 import express from 'express';
-
+import { peerIdFromString } from '@libp2p/peer-id'
 /* eslint-disable no-console */
 import { noise } from '@chainsafe/libp2p-noise'
 import { yamux } from '@chainsafe/libp2p-yamux'
@@ -75,7 +75,7 @@ const createNode = async () => {
         peerId,
         addresses: {
             listen: [`/ip4/127.0.0.1/tcp/${process.env.PORT? '443': port + 1}`],
-            announce: [`/dnsaddr/discovery-biq5.onrender.com/`]
+            announce: [`/dns4/discovery-biq5.onrender.com/tcp/443`]
         },
         transports: [tcp()],
         streamMuxers: [yamux(), mplex()],
@@ -87,7 +87,7 @@ const createNode = async () => {
         ],
         services: {
             kadDHT: kadDHT({
-                protocol: '/org/kad/1.0.0',
+                protocol: '/universe/kad/1.0.0',
                 clientMode: false
             }),
             identify: identify(),
@@ -108,6 +108,12 @@ const createNode = async () => {
 
     node.addEventListener('peer:connect', (evt) => {
         const peerId = evt.detail
+        const peerIdRemote = peerIdFromString('12D3KooWJ46sS3Pi84KZpGwCqk7nsUWWAvnftEQsy6xXec2ZitT1')
+        node.peerRouting.findPeer(peerIdRemote).then(peerInfo => {
+            console.info('----------------------------------------------',peerInfo) // peer id, multiaddrs
+        }).catch(e => {
+            console.error(e)
+        })
         console.log('Connection established to:', peerId.toString()) // Emitted when a peer has been found
     })
 
